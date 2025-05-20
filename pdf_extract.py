@@ -55,6 +55,7 @@ import json
 #             # txt_file.write(response.choices[0].message.content)
 
 def extract_report_text(file):
+    file.seek(0)  
     if file.name.endswith('.pdf'):
         with pdfplumber.open(file) as pdf:
             content = ""
